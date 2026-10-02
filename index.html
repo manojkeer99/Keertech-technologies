@@ -1,11 +1,29 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KeerTech Technologies | Software & Technology Solutions</title>
     <meta name="description" content="KeerTech Technologies is a founder-led software and technology company building websites, web applications, software solutions, AI integrations and digital products." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Theme initialization to prevent flash -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('keertech-theme');
+          if (stored === 'light' || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -44,7 +62,7 @@
     }
     </script>
   </head>
-  <body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-200">
+  <body class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
