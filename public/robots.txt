@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Update the sitemap absolute URL when the production domain is configured
-Sitemap: /sitemap.xml
+Sitemap: https://keertech-technologies.vercel.app/sitemap.xml
